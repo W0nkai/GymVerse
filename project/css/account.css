@@ -1,0 +1,183 @@
+/*WRAPPER*/
+.wrapper {
+    width: 66vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*NAVBAR*/
+.navlogo {
+    width: 80px;
+    height: auto;
+}
+
+.bgnav {
+    background-color: #1F1F23;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    transform: scale(1.1);
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/*BODY*/
+body {
+    background: url('../images/bg.jpg') no-repeat center center/cover ;
+    min-height: 100vh;
+    margin: 0;
+    color: #e4e4e7;
+}
+
+/*LOGIN WRAPPER CENTER ONLY*/
+.center-box {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*LOGIN BOX */
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* animated border */
+.login-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 1px;
+
+    background: linear-gradient(270deg, transparent, orange, transparent);
+    background-size: 400% 400%;
+    animation: borderMove 6s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+@keyframes borderMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+
+.input-group-text {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.form-control {
+    background-color: #1f1f23 !important;
+    color: #fff !important;
+    border: 1px solid #3a3a40 !important;
+}
+
+.form-control::placeholder {
+    color: #8a8a8f;
+}
+
+.form-control:focus {
+    background-color: #1f1f23 !important;
+    border-color: orange !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25) !important;
+}
+
+/*LINKS*/
+.forgot-password,
+.register {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.forgot-password {
+    color: orange;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    color: orange;
+}
+
+/*BUTTON*/
+.btn-warning {
+    background: orange;
+    border: none;
+    margin-top: 10px;
+}
+
+.btn-warning:hover {
+    box-shadow: 0 0 15px orange;
+    transform: scale(1.05);
+}
+.back-home {
+    top: 20px;
+    left: 20px;
+}
+
+.back-home:hover{
+    color: white !important;
+    background-color: #2b2b2b !important;
+    transform: scale(1.1);
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin-left: 115px;
+
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* keeps full image without distortion */
+    display: block;
+}
+
+p{
+    color: orange;
+}

@@ -1,0 +1,222 @@
+body {
+    margin: 0;
+    background-color: #1f1f23;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    padding-top: 85px; /* Offset for fixed navbar */
+}
+
+/* NAVBAR */
+.navlogo {
+    width: 80px;
+    height: auto;
+}
+
+.navlogo2 {
+    width: 35px;
+    height: auto;
+}
+
+.navbtn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navbtn:hover {
+    background-color: orange;
+    color: black;
+    border-color: orange;
+}
+
+/*NAV BACKGROUND*/
+.bgnav {
+    background-color: #0B0B0D;
+}
+
+/*NAV LINKS*/
+
+/* ACTIVE NAV LINK */
+.navbar-nav .nav-link.currentnav {
+    color: #FFA000 !important;
+    transform: scale(1.1);
+}
+
+/* REMOVE UNDERLINE COMPLETELY */
+.navbar-nav .nav-link.currentnav::after {
+    width: 0 !important;
+}
+
+
+.navbar-nav .nav-link {
+    margin-left: 15px;
+    margin-right: 15px;
+    
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* SCALE ON HOVER */
+.navbar-nav .nav-link:hover {
+    transform: scale(1.1);
+}
+
+/* UNDERLINE (hidden by default) */
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: #FFA000; /* change color if needed */
+    transition: width 0.3s ease;
+}
+
+/* UNDERLINE ANIMATION */
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    background-color: #18181b;
+    position: fixed;
+    height: 100vh;
+    padding: 15px;
+    border-right: 1px solid #333;
+    margin-top: 25px;
+}
+
+.sidebar-header {
+    margin-bottom: 20px;
+}
+
+.sidebar-header h5 {
+    color: white;
+}
+
+.sidebar-item {
+    display: block;
+    color: white !important;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.sidebar-item:hover {
+    background-color: #232326;
+    color: white !important;
+    text-decoration: none;
+}
+
+.sidebar-item.active {
+    background-color: orange;
+    color: white !important;
+    font-weight: bold;
+}
+
+/* MAIN CONTENT */
+.content {
+    background-color: #1f1f23;
+    margin-left: 220px;
+    padding: 20px;
+}
+
+/* CARDS WITH ORANGE ANIMATION */
+.card-dark, .card-product {
+    background-color: #2a2a30;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+}
+
+.card-dark::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 2px;
+    background: linear-gradient(135deg, orange, transparent 40%, transparent 60%, orange);
+    background-size: 200% auto;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.card-dark:hover::before {
+    opacity: 1;
+    animation: borderMove 6s linear infinite;
+}
+
+@keyframes borderMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+
+/* Simple hover effect for individual products */
+.card-product {
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-product:hover {
+    transform: translateY(-5px);
+    border-color: #4c4430;
+}
+
+/* ICON BOXES */
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+}
+
+.bg-warning-soft { background-color: #4a3600; }
+.bg-success-soft { background-color: #004d00; }
+.bg-info-soft { background-color: #004d66; }
+.bg-danger-soft { background-color: #660000; }
+
+/* TABLES */
+.table-dark-custom {
+    width: 100%;
+    color: white;
+}
+
+.table-dark-custom th,
+.table-dark-custom td {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.table-dark-custom th {
+    background-color: #18181b;
+}
